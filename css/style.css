@@ -3,6 +3,8 @@
 * {
     box-sizing: border-box;
 }
+
+/* ハンバーガーメニュー*/
 .menu-btn {
     position: fixed;
     top: 10px;
@@ -31,6 +33,22 @@
 }
 .menu-btn span:after {
     top: 8px;
+}
+/* クリックされた後に×印にするCSS */
+#menu-btn-check:checked ~ .menu-btn span {
+    background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+}
+#menu-btn-check:checked ~ .menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+/* チェックボックスを隠す */
+#menu-btn-check {
+    display: none;
 }
 
 
